@@ -6,25 +6,26 @@ const StripeCheckoutButton = ({price}) => {
     const publishableKey = 'pk_test_k8ZdFUiX2rabCxkRWAGMfWXH';
 
 
-const onToken = token => {
+    const onToken = token => {
     console.log(token);
     alert('Payment Successful')
+    }
 
-}
-return (
-    <StripeCheckout
-        label='Pay Now'
-        name='RID Clothing Ltd.'
-        billingAddress
-        shippingAddress
-        image=''
-        description={`Your total is $${price}`}
-        amount={priceForStripe}
-        panelLabel='Pay Now'
-        token={onToken}
-        stripeKey={publishableKey}
-    />
-);
+    
+    return (
+        <StripeCheckout
+            label='Pay Now'
+            name='RID Clothing Ltd.'
+            billingAddress
+            shippingAddress
+            image=''
+            description={`Your total is $${price}`}
+            amount={priceForStripe}
+            panelLabel='Pay Now'
+            token={onToken}
+            stripeKey={publishableKey}
+        />
+    );
 };
 
 export default StripeCheckoutButton;
